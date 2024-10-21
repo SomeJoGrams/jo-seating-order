@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "poetry-template-project"
+version = "0.1.0"
+description = ""
+authors = ["Jonathan Liening <grefor8@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "poetry_template_project" }]
+
+[tool.poetry.dependencies]
+python = "^3.13.0"
+pyqt6 = "^6.7.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+mypy = "^1.12.1"
+coverage = "^7.6.4"
+pre-commit = "^4.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.bandit.assert_used]
+skips = ['*_test.py', '*/test_*.py']

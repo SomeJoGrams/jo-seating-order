@@ -1,0 +1,48 @@
+repos:
+    - repo: https://github.com/psf/black
+      rev: 23.9.1 # Use the latest stable version of Black
+      hooks:
+          - id: black
+            name: black
+            language_version: python3.13 # Adjust according to your Python version
+
+    - repo: https://github.com/pycqa/isort
+      rev: 5.12.0
+      hooks:
+          - id: isort
+            name: isort Import Sorter
+            args: ["--profile", "black"]
+
+    - repo: https://github.com/PyCQA/bandit
+      rev: 1.7.5 # Use the latest stable version
+      hooks:
+          - id: bandit
+            name: Bandit Security Checks
+            args: ["-c", "pyproject.toml", "-r", "poetry_template_project"]
+
+    - repo: https://github.com/pre-commit/mirrors-mypy
+      rev: v1.12.1 # Use the latest version of mypy
+      hooks:
+          - id: mypy
+            name: mypy
+            args: ["--ignore-missing-imports"]
+
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v5.0.0
+      hooks:
+          - id: check-added-large-files
+          - id: trailing-whitespace
+          - id: end-of-file-fixer
+
+    - repo: local
+      hooks:
+          - id: run-coverage
+            name: Run Coverage
+            entry: "poetry run coverage run -m unittest discover -p *test.py && poetry run coverage report -m"
+            language: system
+            pass_filenames: false
+
+    - repo: https://github.com/Yelp/detect-secrets
+      rev: v1.3.0 # Use the latest stable version
+      hooks:
+          - id: detect-secrets

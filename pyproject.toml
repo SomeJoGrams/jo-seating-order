@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "poetry-template-project"
+name = "jo-seating-order"
 version = "0.1.0"
 description = ""
 authors = ["Jonathan Liening <grefor8@gmail.com>"]

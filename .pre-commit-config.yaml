@@ -18,7 +18,7 @@ repos:
       hooks:
           - id: bandit
             name: Bandit Security Checks
-            args: ["-c", "pyproject.toml", "-r", "poetry_template_project"]
+            args: ["-c", "pyproject.toml", "-r", "jo_seating_order"]
 
     - repo: https://github.com/pre-commit/mirrors-mypy
       rev: v1.12.1 # Use the latest version of mypy

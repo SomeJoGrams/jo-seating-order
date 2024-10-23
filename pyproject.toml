@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Jonathan Liening <grefor8@gmail.com>"]
 readme = "README.md"
-packages = [{ include = "poetry_template_project" }]
+packages = [{ include = "jo_seating_order" }]
 
 [tool.poetry.dependencies]
 python = "^3.13.0"

@@ -26,10 +26,10 @@ jobs:
 
             - name: Run Checks
               run: |
-                  python -m black tests/ poetry_template_project/
-                  python -m mypy tests/ poetry_template_project/
-                  python -m bandit tests/ poetry_template_project/
-                  python -m flake8 tests/ poetry_template_project/
+                  python -m black tests/ jo_seating_order/
+                  python -m mypy tests/ jo_seating_order/
+                  python -m bandit tests/ jo_seating_order/
+                  python -m flake8 tests/ jo_seating_order/
 
             - name: Create Coverage report
               run: |

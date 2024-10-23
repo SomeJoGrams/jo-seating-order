@@ -26,7 +26,7 @@ jobs:
 
             - name: Run Checks
               run: |
-                  python -m black tests/ poetry_template_project
-                  python -m mypy tests/ poetry_template_project
-                  python -m bandit tests/ poetry_template_project
-                  python -m flake8 tests/ poetry_template_project
+                  python -m black tests/ poetry_template_project/
+                  python -m mypy tests/ poetry_template_project/
+                  python -m bandit tests/ poetry_template_project/
+                  python -m flake8 tests/ poetry_template_project/

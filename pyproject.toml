@@ -9,6 +9,7 @@ packages = [{ include = "poetry_template_project" }]
 [tool.poetry.dependencies]
 python = "^3.13.0"
 pyqt6 = "^6.7.1"
+pytest = "^8.3.3"
 
 
 [tool.poetry.group.dev.dependencies]

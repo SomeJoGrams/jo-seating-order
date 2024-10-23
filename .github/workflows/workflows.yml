@@ -22,7 +22,7 @@ jobs:
 
             - name: Install pre-commit
               run: |
-                  pip install black coverage mypy flake8 bandit
+                  pip install black coverage mypy flake8 bandit pytest
 
             - name: Run Checks
               run: |
@@ -33,4 +33,5 @@ jobs:
 
             - name: Create Coverage report
               run: |
-                  python -m coverage run tests/
+                  python -m coverage run -m pytest tests
+                  python -m coverage report -m

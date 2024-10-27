@@ -20,18 +20,23 @@ jobs:
               with:
                   python-version: "3.13"
 
-            - name: Install pre-commit
+            - name: Install poetry
+              uses: abatilo/actions-poetry@v2
+              with:
+                  poetry-version: "1.7.1"
+
+            - name: Install Dependencies
               run: |
-                  pip install black coverage mypy flake8 bandit pytest
+                  poetry install --with=DEV
 
             - name: Run Checks
               run: |
-                  python -m black tests/ jo_seating_order/
-                  python -m mypy tests/ jo_seating_order/
-                  python -m bandit tests/ jo_seating_order/
-                  python -m flake8 tests/ jo_seating_order/
+                  poetry run python -m black tests/ jo_seating_order/
+                  poetry run python -m mypy tests/ jo_seating_order/
+                  poetry run python -m bandit tests/ jo_seating_order/
+                  poetry run python -m flake8 tests/ jo_seating_order/
 
             - name: Create Coverage report
               run: |
-                  python -m coverage run -m pytest tests
-                  python -m coverage report -m
+                  poetry run python -m coverage run -m pytest tests
+                  poetry run python -m coverage report -m

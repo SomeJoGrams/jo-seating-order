@@ -33,7 +33,7 @@ jobs:
               run: |
                   poetry run python -m black tests/ jo_seating_order/
                   poetry run python -m mypy tests/ jo_seating_order/
-                  poetry run python -m bandit tests/ jo_seating_order/
+                  poetry run python -m bandit -r ./tests/ jo_seating_order/
                   poetry run python -m flake8 tests/ jo_seating_order/
 
             - name: Create Coverage report
